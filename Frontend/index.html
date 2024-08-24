@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="svg">
+            <div class="img">
+
+                <div class="svg2">
+                    <div class="img2"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"
+        integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"
+        integrity="sha512-YzMW3OzvgtVpIIPPpjnCy8wVTq5slHRrxnLH1oD5dkVjZf8+8DJYd+GYmmWXZNmroTqKXFFzFS3XZ/LBvaNgZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
+    <script>
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#main",
+                start: '50% 50%',
+                end: "250% 50%",
+                scrub: true,
+                pin: true,
+                markers: true
+            }
+        })
+        tl.to(".svg", {
+            maskSize: "200%"
+        },"a");
+        tl.to(".img", {
+            backgroundSize:"100%",
+        },"a");
+        tl.to(".svg2", {
+            maskSize: "200%"
+        },"b");
+        tl.to(".img2", {
+            backgroundSize:"100%",
+        },"b");
+    </script>
+</body>
+
+</html>
